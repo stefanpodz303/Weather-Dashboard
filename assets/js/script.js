@@ -33,6 +33,20 @@ function oneDayCall(city) {
 }
 
 function fiveDayCall(city) {
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q='+city+'&appid=032af0ff95709be09e01f89ce7ab1a46', {
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(function (response) {
+        console.log(response);
+        return response.json();
+    }).then(function (data)  {
+        console.log('RESPONSE ', data)
+    })
+    .catch(function (err)  {
+        console.error(err);
+    });
     console.log("five day forecast");
 }
 function getUVIndex(lat, lon) {
