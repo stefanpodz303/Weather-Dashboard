@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
     <title>Weather Dashboard</title>
 </head>
 <body>
- <h1>WEATHER DASHBOARD</h1>
-    
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container row d-flex justify-content-center mt-4">
+          <h1 class="display-4 d-flex justify-content-center">Weather Dashboard</h1>
+          <p class="lead d-flex justify-content-center">Get up to date weather in your area!</p>
+        </div>
+      </div>
+    <div>
+        <form class="form-inline col-sm">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+    </div>
 
     <script src="assets/js/script.js"></script>
 </body>
