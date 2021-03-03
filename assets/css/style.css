@@ -5,3 +5,23 @@ body {
 .container {
     color: #f6f606 ;
 }
+
+.card {
+    
+    background-color:  #87ceeb;
+    margin-left: 10px; 
+    border: solid black 2px;
+}
+.forecast {
+    border: solid black 2px;
+    color: white;
+    
+}
+
+#searchBtn {
+    border: solid 2px black;
+}
+
+.fa-cloud-sun-rain {
+    color:#f6f606;
+}
