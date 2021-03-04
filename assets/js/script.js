@@ -30,8 +30,10 @@ function oneDayCall(city) {
             fiveDayCall(city);
             getUVIndex(data.coord.lat, data.coord.lon);
 
-            tempP.textContent = `Temprature: ${data.main.temp}`
-            humP.textContent = `Humidity: ${data.main.humidity}`
+            cityH.textContent = `City: ${data.name}`
+            tempP.textContent = `Temperature: ${data.main.temp}`;
+            humP.textContent = `Humidity: ${data.main.humidity}`;
+            windP.textContent = `Wind Speed: ${data.wind.speed}`;
 
 
         })
