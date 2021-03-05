@@ -4,6 +4,13 @@ var tempP = document.getElementById('temp');
 var humP = document.getElementById('hum');
 var windP = document.getElementById('wind');
 var uvP = document.getElementById('uv');
+// var cityFiveDay = document.getElementById('');
+// var tempFiveDay = document.getElementById('');
+// var humFiveDay = document.getElementById('');
+// var windFiveDay = document.getElementById('');
+// var uvFiveDay = document.getElementById('');
+var savedSearch = document.getElementById('saved-search');
+var searches = [];
 
 // This function allows the user to enter a city of their choice and click the search button to retrieve forecast APIs
 function getSearchVal(event) {
@@ -34,7 +41,7 @@ function oneDayCall(city) {
             tempP.textContent = `Temperature: ${data.main.temp}`;
             humP.textContent = `Humidity: ${data.main.humidity}`;
             windP.textContent = `Wind Speed: ${data.wind.speed}`;
-
+            uvP.textContent = `UV Index: ${data.value}`;
 
         })
         .catch(function (err) {
@@ -42,7 +49,26 @@ function oneDayCall(city) {
         });
 
 }
-
+// The following function renders search items as <li> elements
+function renderSearch() {
+    // Clear search 
+    savedSearch.innerHTML = "";
+  
+    // Render a new li for each search
+    for (var i = 0; i < searches.length; i++) {
+      var search = searches[i];
+  
+      var li = document.createElement("li");
+      li.textContent = search;
+      li.setAttribute("saved-search", i);
+  
+      var button = document.createElement("button");
+      button.textContent = "Clear X";
+  
+      li.appendChild(button);
+      savedSearch.appendChild(li);
+    }
+  }
 // localstorage
 var localArr = JSON.parse(localStorage.getItem("cities")) || [];
 
@@ -58,6 +84,7 @@ function fiveDayCall(city) {
         }).then(function (data) {
             console.log('RESPONSE ', data)
         })
+
         .catch(function (err) {
             console.error(err);
         });
