@@ -19,30 +19,30 @@
             <p class="lead d-flex justify-content-center">Get up to date weather in your area!</p>
         </div>
     </div>
-    <div class="row">
-        <div class="card w-25">
-            <form class="form-inline col-sm">
-                <h3>Search for a City:</h3>
-                <input class="form-control-med mr-sm-2" id="city-search" type="text">
-                <button class="btn btn-lg" id="searchBtn"><i class="fas fa-cloud-sun-rain"></i></button>
-            </form>
-            <ul id="saved-search"></ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 card w-25">
+                <form class="form-inline col-sm">
+                    <h3>Search for a City:</h3>
+                    <input class="form-control-med mr-sm-2" id="city-search" type="text">
+                    <button class="btn btn-lg" id="searchBtn"><i class="fas fa-cloud-sun-rain"></i></button>
+                </form>
+                <div class="container my-4" id="saved-search"></div>
+            </div>
+            <div class=" col card w-50">
+                <h1 id="city"></h1>
+                <p class="" id="temp"></p>
+                <p class="" id="hum"></p>
+                <p class="" id="wind"></p>
+                <p class="" id="uv"></p>
+            </div>
         </div>
-        <div class="card w-50">
-            <h1 id="city"></h1>
-            <p class="" id="temp"></p>
-            <p class="" id="hum"></p>
-            <p class="" id="wind"></p>
-            <p class="" id="uv"></p>
-        </div>
+        <div id="five-day" class="row">
+
     </div>
-    <div class="row">
-        <div class="col forecast mt-4" id="one">Day 1</div>
-        <div class="col forecast mt-4" id="two">Day 2</div>
-        <div class="col forecast mt-4" id="three">Day 3</div>
-        <div class="col forecast mt-4" id="four">Day 4</div>
-        <div class="col forecast mt-4" id="five">Day 5</div>
+
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 
