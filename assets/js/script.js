@@ -49,6 +49,7 @@ function oneDayCall(city) {
 
 }
 
+// This function returns a 5-day forecast API
 function fiveDayCall(city) {
     fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=032af0ff95709be09e01f89ce7ab1a46&units=imperial', {
         headers: {
@@ -69,22 +70,17 @@ function fiveDayCall(city) {
                     <p>Temperature: ${data.list[i].main.temp}</p>
                     <p>Humidity: ${data.list[i].main.humidity}</p>
                     <p>Wind Speed: ${data.list[i].wind.speed}</p>
-                   
                 </div>
             `);
-
                 $("#five-day").append(elements);
-
-
             }
-
         })
-
         .catch(function (err) {
             console.error(err);
         });
 }
 
+// This function calls a UV Index API
 function getUVIndex(lat, lon) {
     fetch(`https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=032af0ff95709be09e01f89ce7ab1a46`, {
         headers: {
@@ -102,19 +98,16 @@ function getUVIndex(lat, lon) {
         });
 }
 
-// The following function renders previous searched items 
+// The following function renders previous searched items and links them to a button to recall the search data for that item 
 function renderSearch() {
-    // Clear search 
+ 
     savedSearch.innerHTML = "";
-    // Render a new li for each search
+   
     for (var i = 0; i < localArr.length; i++) {
         var search = localArr[i];
-
-
         var val = $(`
-        <button class="row w-100">${search}</button>
+        <button class="row w-50">${search}</button>
         `)
-
         val.on("click", function () {
 
             oneDayCall($(this).text())
